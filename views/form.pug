@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  <form method="POST" action="/new">
+    <label for="username"> Name: </label>
+    <input type="text" id="username" name="username">
+    <br>
+    <label for="messageText"> Message: </label>
+    <input type="text" name="messageText">
+    <button id="Submit">Submit</button>
+  </form>
