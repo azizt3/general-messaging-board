@@ -1,6 +1,7 @@
 extends layout
 
 block content
+
   h1= title
   p  Welcome to #{title}! talk about whatever is on your mind!
   main
@@ -10,6 +11,7 @@ block content
      section.message-card 
       h2=message.text  
       p=message.user
+      p=message.date
       footer
         p=message.added
     

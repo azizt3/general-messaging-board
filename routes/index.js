@@ -1,16 +1,21 @@
 var express = require('express');
 var router = express.Router();
 
-const messages = [
-  {
+// Existing messages, new messages will be pushed into this array
+const messages = [{
     text: "Hello Friends!",
-    user: "Tabbish",
-    added: new Date()
+    user: "Tabbish Aziz",
+    added: new Date().toLocaleString()
   },
   {
     text: "Good Day, good morning, goodnight!",
-    user: "Kanye",
-    added: new Date()
+    user: "Kanye West",
+    added: new Date().toLocaleString()
+  },
+  {
+    text: "Luke I am your father",
+    user: "Darth Vader",
+    added: new Date().toLocaleString()
   }
 ];
 
@@ -19,15 +24,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'General Message Board!', messages: messages});
 });
 
+//Takes the contents of the form submission and pushes them into message array.
 router.post('/new', (req, res, next)=> {
-  const newMessage = {
-    title: req.body.title,
-    description: req.body.description,
-    username: req.body.username,
-    date: new Date()
-  };
+  messages.push ({
+    text: req.body.message,
+    user: req.body.username,
+    date: new Date().toLocaleString()
+  });
 
-  messages.unshift(newMessage)
+ //inserts new elements at the start of the array  
+  messages.unshift()
   res.redirect('/')
 });
 

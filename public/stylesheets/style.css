@@ -6,3 +6,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.message-card{
+  border: 1px solid #59a9b9;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
